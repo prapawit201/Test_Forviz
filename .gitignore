@@ -1,0 +1,39 @@
+# Go workspace
+# .vscode, .idea และอื่น ๆ ที่เกี่ยวข้องกับ IDE
+.vscode/
+.idea/
+
+# Go binary files
+/bin/
+/build/
+/out/
+
+# Go module files
+go.sum
+go.mod
+
+# Go test result
+*.test
+*.out
+
+# Temporary Go files (compiled, cache, etc.)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Ignore compiled Go files
+*.a
+*.o
+*.out
+
+# Ignore IDE files (GoLand, VS Code, etc.)
+*.idea/
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*~

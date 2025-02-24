@@ -1,0 +1,53 @@
+# API create book
+CreateBookRequest:
+  type: object
+  required:
+    - name
+    - author
+    - type
+    - price
+  properties: 
+    name:
+      type: string
+    author:
+      type: string
+    type:
+      type: string
+    price:
+      type: number
+      format: float
+    zone:
+      type: string
+      
+# API update book
+UpdateBookRequest:
+  type: object
+  required:
+    - id
+  properties: 
+    id:
+      type: string
+    name:
+      type: string
+    author:
+      type: string
+    type: 
+      type: string
+    price:
+      type: number
+      format: float      
+    zone:
+      type: string
+
+# API update book status
+UpdateBookStatusRequest:
+  type: object
+  required:
+    - id
+    - status
+  properties: 
+    id:
+      type: string
+    status:
+      type: string
+

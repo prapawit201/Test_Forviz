@@ -1,0 +1,156 @@
+openapi: 3.0.0
+info:
+  title: Library API
+  version: 1.0.0
+paths:
+  /book:
+    post:
+      summary: Create book
+      operationId:  createBook
+      request:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/api/schemas/CreateBookRequest"      
+      responses:
+        '201':
+          description: Create book success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  message:
+                    type: string
+    put:
+      summary: Update book
+      operationId: updateBook
+      request:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/api/schemas/UpdateBookRequest"             
+      responses:
+        '200':
+          description: Update book success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  message:
+                    type: string                       
+  /book/{id}:
+    get:
+      summary: Get book detail
+      operationId:  getBookDetail      
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string            
+      responses:
+        '200':
+          description: Get book detail success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  message:
+                    type: string                                            
+    delete:
+      summary: Delete book 
+      operationId:  deleteBook
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string            
+      responses:
+        '200':
+          description: Delete book Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  message:
+                    type: string                            
+  /books:
+    get:
+      summary: Get books
+      operationId:  getBooks
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer 
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer       
+        - name: filter_by
+          in: query
+          require:  false
+          schema:
+            type: string
+        - name: filter_value
+          in: query
+          require:  false
+          schema:
+            type: string   
+        - name: sort
+          in: query
+          require:  false
+          schema:
+            type: string                      
+      responses:
+        '200':
+          description: Get books success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  message:
+                    type: string  
+  /book/status:
+    put:
+      summary: Update book status
+      operationId: updateBookStatus
+      request:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/api/schemas/UpdateBookStatusRequest"             
+      responses:
+        '200':
+          description: Update book status success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  message:
+                    type: string                            
+            
